@@ -10,7 +10,7 @@
 
     define("DB_ENCODE","utf8");
 
-    define("SYSTEM_NAME","POS_SYSTEM");
+    define("SISTEMA_NOMBRE","POS_SYSTEM");
 
 
 ?>

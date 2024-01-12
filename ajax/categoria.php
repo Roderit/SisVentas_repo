@@ -40,14 +40,14 @@
         case 'listar':
             $respuesta = $categoria->listar();
 
-            $data = array();
+            $data = Array();
 
             while($resp=$respuesta->fetch_object()){
                 $data[] = array(
                     "0"=>$resp->idcategoria,
                     "1"=>$resp->nombre,
                     "2"=>$resp->descripcion,
-                    "3"=>$resp->condicion
+                    "3"=>$resp->condicion,
                 );
             }
 
