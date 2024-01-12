@@ -38,7 +38,27 @@
         break;
 
         case 'listar':
-            
+            $respuesta = $categoria->listar();
+
+            $data = array();
+
+            while($resp=$respuesta->fetch_object()){
+                $data[] = array(
+                    "0"=>$resp->idcategoria,
+                    "0"=>$resp->nombre,
+                    "0"=>$resp->descripcion,
+                    "0"=>$resp->condicion
+                );
+            }
+
+            $result = array(
+                "echo"=>1,
+                "totalrecords"=>count($data),
+                "iTotalDisplayRecords"=>count($data),
+                "aaData"=>$data
+            );
+
+            echo json_encode($result);
         break;
 
     }
