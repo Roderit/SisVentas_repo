@@ -86,4 +86,19 @@ function guardaryeditar(e){
     limpiar();
 }
 
+function mostrar(idcategoria){
+
+    $.post("../ajax/categoria.php?op=mostrar",
+    {categoria: idcategoria},
+    function(data, status){
+        data = JSON.parse(data);
+        mostrarFormulario(true);
+
+        $("#nombre").val(data.nombre);
+        $("#descripcion").val(data.descripcion);
+        $("#idcategoria").val(data.idcategoria);
+    }
+    )
+}
+
 init();

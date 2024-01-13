@@ -44,7 +44,8 @@
 
             while($resp=$respuesta->fetch_object()){
                 $data[] = array(
-                    "0"=>$resp->idcategoria,
+                    "0"=>'<button class="btn btn-warning" onclick="mostrar('.$resp->idcategoria.')">
+                    <i class="fa fa-pencil"></i></button>',
                     "1"=>$resp->nombre,
                     "2"=>$resp->descripcion,
                     "3"=>$resp->condicion,
