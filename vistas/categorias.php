@@ -35,7 +35,7 @@
                         <div class="box">
                             <div class="box-header with-border">
                                 <h1 class="box-title">Categoría <button class="btn btn-success" id="btnagregar"
-                                        onclick="mostrarelformulario(true)"><i class="fa fa-plus-circle"></i>
+                                        onclick="mostrarFormulario(true)"><i class="fa fa-plus-circle"></i>
                                         Agregar</button>
                                 </h1>
                                 <div class="box-tools pull-right">
@@ -89,10 +89,10 @@
                                     </div>
 
                                     <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <button class="btn btn-primary" type="submit" id="btnGuardar"><i
+                                        <button class="btn btn-primary" type="submit" id="btnguardar"><i
                                                 class="fa fa-save"></i> Guardar</button>
 
-                                        <button class="btn btn-danger" onclick="cancelarformulario()" type="button"><i
+                                        <button class="btn btn-danger" onclick="cancelarFormulario()" type="button"><i
                                                 class="fa fa-arrow-circle-left"></i> Cancelar</button>
                                     </div>
 
