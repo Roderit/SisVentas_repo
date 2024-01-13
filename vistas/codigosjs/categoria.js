@@ -89,7 +89,7 @@ function guardaryeditar(e){
 function mostrar(idcategoria){
 
     $.post("../ajax/categoria.php?op=mostrar",
-    {categoria: idcategoria},
+    {idcategoria: idcategoria},
     function(data, status){
         data = JSON.parse(data);
         mostrarFormulario(true);
