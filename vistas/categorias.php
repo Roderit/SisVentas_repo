@@ -64,48 +64,36 @@
                             </div>
 
 
-
                             <div class="card-body" id="formularioregistros">
-                                <form name="formulario" id="formulario" method="POST">
-                                    <div class="row">
-                                        <div class="col-sm-6">
+                            <form name="formulario" id="formulario" method="POST">
+                              <div class="row">
+                                <div class="col-sm-6">
 
-                                            <div class="form-group">
-                                                <label>nombre</label>
-                                                <input type="hidden" name="idcategoria" id="idcategoria">
-                                                <input type="text" class="form-control" name="nombre" id="nombre"
-                                                    placeholder="escribir nombre" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label>descripcion</label>
-                                                <input type="text" class="form-control" name="descripcion"
-                                                    id="descripcion" placeholder="escribir descripcion" required>
-                                            </div>
-                                        </div>
+                                  <div class="form-group">
+                                    <label>nombre</label>
+                                    <input type="hidden" name="idcategoria" id="idcategoria">
+                                    <input type="text" class="form-control" name="nombre" id="nombre"
+                                      placeholder="escriba el nombre" required>
+                                  </div>
+                                </div>
+                                <div class="col-sm-6">
+                                  <div class="form-group">
+                                    <label>descripcion</label>
+                                    <input type="text" class="form-control" name="descripcion" id="descripcion"
+                                      placeholder="escriba la descripcion" required>
+                                  </div>
+                                </div>
+                              </div>
 
+                              <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <button class="btn btn-primary" type="submit" id="btnguardar">
+                                  <i class="fa fa-save"></i> Guardar</button>
 
-                                    </div>
-
-                                    <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <button class="btn btn-primary" type="submit" id="btnguardar"><i
-                                                class="fa fa-save"></i> Guardar</button>
-
-                                        <button class="btn btn-danger" onclick="cancelarFormulario()" type="button"><i
-                                                class="fa fa-arrow-circle-left"></i> Cancelar</button>
-                                    </div>
-
-
-
-
-                                </form>
+                                <button class="btn btn-danger" onclick="cancelarFormulario()" type="button">
+                                  <i class="fa fa-arrow-circle-left"></i> Cancelar</button>
+                              </div>
+                            </form>
                             </div>
-
-
-
-
-
 
                             <!--Fin centro -->
                         </div><!-- /.box -->
