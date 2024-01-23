@@ -95,9 +95,9 @@
 
                                 <div class="col-sm-6">
                                   <div class="form-group">
-                                    <label>Código</label>
-                                    <input type="text" class="form-control" name="codigo" id="codigo"
-                                      placeholder="escriba el código" required>
+                                    <label>Stock</label>
+                                    <input type="text" class="form-control" name="stock" id="stock"
+                                      placeholder="escriba cantidad en stock" required>
                                   </div>
                                 </div>
 
@@ -110,9 +110,11 @@
 
                                 <div class="col-sm-6">
                                   <div class="form-group">
-                                    <label>Stock</label>
-                                    <input type="text" class="form-control" name="stock" id="stock"
-                                      placeholder="escriba cantidad en stock" required>
+                                    <label>Código</label>
+                                    <input type="text" class="form-control" name="codigo" id="codigo"
+                                      placeholder="escriba el código" required><br>
+                                    <button class="btn- btn-success" type="button" onclick="generarbarCode()">Generar</button>
+                                    <div id="print"><svg id="barcode"></svg></div>
                                   </div>
                                 </div>
 

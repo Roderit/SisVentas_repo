@@ -12,8 +12,6 @@ function init(){
         $("#idcategoria").html(r);
         //$('#idcategoria').selectpicker('refresh');
     });
-
-    $("#imagenmuestra").hide();
 }
 
 function limpiar(){
@@ -35,6 +33,7 @@ function mostrarFormulario(x){
         $("#listadoregistros").hide();
         $("#formularioregistros").show();
         $("#btnguardar").prop("disabled",false);
+        $("#imagenmuestra").hide();
         $("#btnagregar").hide();
     }else{
         $("#listadoregistros").show();
@@ -117,6 +116,8 @@ function mostrar(idarticulo){
         $("#imagenmuestra").attr("src","../files/articulos/"+data.imagen);
         $("#imagenactual").val(data.imagen);
         $("#idarticulo").val(data.idarticulo);
+
+        generarbarCode();
     }
     )
 }
@@ -145,6 +146,13 @@ function activar(idarticulo){
             });
         }
     });
+}
+
+function generarbarCode(){
+    codigo = $("#codigo").val();
+    JsBarcode("#barcode", codigo);
+
+    $("#print").show();
 }
 
 init();
