@@ -12,7 +12,13 @@ function init(){
 function limpiar(){
     $("#nombre").val("");
     $("#descripcion").val("");
-    $("#idcategoria").val("");
+    $("#codigo").val("");
+    $("#stock").val("");
+    $("#imagen").val("");
+    $("#imagenactual").val("");
+    $("#print").hide();
+    $("#idarticulo").val("");
+
 }
 
 function mostrarFormulario(x){
@@ -94,18 +100,25 @@ function mostrar(idarticulo){
         data = JSON.parse(data);
         mostrarFormulario(true);
 
-        $("#nombre").val(data.nombre);
-        $("#descripcion").val(data.descripcion);
         $("#idcategoria").val(data.idcategoria);
+        $("#idcategoria").selectpicker('refresh');
+        $("#codigo").val(data.codigo);
+        $("#nombre").val(data.nombre);
+        $("#stock").val(data.stock);
+        $("#descripcion").val(data.descripcion);
+        $("#imagenmuestra").show();
+        $("#imagenmuestra").attr("src","../files/articulos/"+data.imagen);
+        $("#imagenactual").val(data.imagen);
+        $("#idarticulo").val(data.idarticulo);
     }
     )
 }
 
-function desactivar(idcategoria){
-    bootbox.confirm("¿Está seguro de desactivar la categoría?", function(result){
+function desactivar(idarticulo){
+    bootbox.confirm("¿Está seguro de desactivar el artículo?", function(result){
         if(result){
             $.post("../ajax/articulos.php?op=desactivar", 
-            {idcategoria: idcategoria},
+            {idarticulo: idarticulo},
             function(e){
                 bootbox.alert(e);
                 tabla.ajax.reload();
@@ -114,11 +127,11 @@ function desactivar(idcategoria){
     });
 }
 
-function activar(idcategoria){
-    bootbox.confirm("¿Está seguro de activar la categoría?", function(result){
+function activar(idarticulo){
+    bootbox.confirm("¿Está seguro de activar el artículo?", function(result){
         if(result){
             $.post("../ajax/articulos.php?op=activar", 
-            {idcategoria: idcategoria},
+            {idarticulo: idarticulo},
             function(e){
                 bootbox.alert(e);
                 tabla.ajax.reload();

@@ -78,17 +78,54 @@
                                 <div class="col-sm-6">
 
                                   <div class="form-group">
-                                    <label>nombre</label>
-                                    <input type="hidden" name="idcategoria" id="idcategoria">
+                                    <label>Nombre</label>
+                                    <input type="hidden" name="idarticulo" id="idarticulo">
                                     <input type="text" class="form-control" name="nombre" id="nombre"
                                       placeholder="escriba el nombre" required>
                                   </div>
                                 </div>
+
+                                <div class="col-sm-6">
+
+                                  <div class="form-group">
+                                    <label>Descripción</label>
+                                    <input type="text" class="form-control" name="descripcion" id="descripcion"
+                                      placeholder="escriba la descripción" required>
+                                  </div>
+                                </div>
+
+                                <div class="col-sm-6">
+
+                                  <div class="form-group">
+                                    <label>Código</label>
+                                    <input type="text" class="form-control" name="codigo" id="codigo"
+                                      placeholder="escriba el código" required>
+                                  </div>
+                                </div>
+
+                                <div class="col-sm-6">
+
+                                  <div class="form-group">
+                                    <label>Categoría</label>
+                                    <select class="form-control" name="idcategoria" id="idcategoria"></select>
+                                  </div>
+                                </div>
+
+                                <div class="col-sm-6">
+
+                                  <div class="form-group">
+                                    <label>Stock</label>
+                                    <input type="text" class="form-control" name="stock" id="stock"
+                                      placeholder="escriba cantidad en stock" required>
+                                  </div>
+                                </div>
+
                                 <div class="col-sm-6">
                                   <div class="form-group">
-                                    <label>descripcion</label>
-                                    <input type="text" class="form-control" name="descripcion" id="descripcion"
-                                      placeholder="escriba la descripcion" required>
+                                    <label>Imagen</label>
+                                    <input type="file" class="form-control" name="imagen" id="imagen" required>
+                                    <input type="hidden" class="form-control" name="imagenactual" id="imagenactual">
+                                    <img src="" width="150px" height="120px" id="imagenmuestra"><br>
                                   </div>
                                 </div>
                               </div>
