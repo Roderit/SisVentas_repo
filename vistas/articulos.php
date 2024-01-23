@@ -75,8 +75,8 @@
                             <div class="card-body" id="formularioregistros">
                             <form name="formulario" id="formulario" method="POST">
                               <div class="row">
+                                
                                 <div class="col-sm-6">
-
                                   <div class="form-group">
                                     <label>Nombre</label>
                                     <input type="hidden" name="idarticulo" id="idarticulo">
@@ -86,7 +86,6 @@
                                 </div>
 
                                 <div class="col-sm-6">
-
                                   <div class="form-group">
                                     <label>Descripción</label>
                                     <input type="text" class="form-control" name="descripcion" id="descripcion"
@@ -95,7 +94,6 @@
                                 </div>
 
                                 <div class="col-sm-6">
-
                                   <div class="form-group">
                                     <label>Código</label>
                                     <input type="text" class="form-control" name="codigo" id="codigo"
@@ -104,7 +102,6 @@
                                 </div>
 
                                 <div class="col-sm-6">
-
                                   <div class="form-group">
                                     <label>Categoría</label>
                                     <select class="form-control" name="idcategoria" id="idcategoria"></select>
@@ -112,7 +109,6 @@
                                 </div>
 
                                 <div class="col-sm-6">
-
                                   <div class="form-group">
                                     <label>Stock</label>
                                     <input type="text" class="form-control" name="stock" id="stock"
@@ -123,7 +119,7 @@
                                 <div class="col-sm-6">
                                   <div class="form-group">
                                     <label>Imagen</label>
-                                    <input type="file" class="form-control" name="imagen" id="imagen" required>
+                                    <input type="file" class="form-control" name="imagen" id="imagen">
                                     <input type="hidden" class="form-control" name="imagenactual" id="imagenactual">
                                     <img src="" width="150px" height="120px" id="imagenmuestra"><br>
                                   </div>

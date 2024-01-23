@@ -81,5 +81,18 @@
             echo json_encode($result);
         break;
 
+        case 'selectCategoria':
+
+            require_once "../modelos/categoria.php";
+    
+            $categoria = new Categoria();
+    
+            $respuesta = $categoria->listar();
+    
+            while ($reg = $respuesta->fetch_object()){
+                echo '<option value='.$reg->idcategoria.'>'.$reg->nombre.'</option>';
+            }
+        break;
+
     }
 ?>

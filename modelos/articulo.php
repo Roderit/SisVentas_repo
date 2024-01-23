@@ -15,8 +15,8 @@
         }
 
         public function editar($idarticulo, $idcategoria, $codigo, $nombre, $stock, $descripcion, $imagen){
-            $sql = "UPDATE articulo SET idcategoria=$idcategoria, codigo=$codigo, nombre='$nombre', stock=$stock,
-            descripcion='$descripcion', imagen=$imagen WHERE idarticulo='$idarticulo'";
+            $sql = "UPDATE articulo SET idcategoria='$idcategoria', codigo='$codigo', nombre='$nombre', stock='$stock',
+            descripcion='$descripcion', imagen='$imagen' WHERE idarticulo='$idarticulo'";
             return ejConsulta($sql);
         }
 

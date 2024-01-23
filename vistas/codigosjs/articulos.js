@@ -7,6 +7,13 @@ function init(){
     $("#formulario").on("submit", function(e){
         guardaryeditar(e);
     })
+
+    $.post("../ajax/articulos.php?op=selectCategoria", function(r){
+        $("#idcategoria").html(r);
+        //$('#idcategoria').selectpicker('refresh');
+    });
+
+    $("#imagenmuestra").hide();
 }
 
 function limpiar(){
@@ -101,7 +108,7 @@ function mostrar(idarticulo){
         mostrarFormulario(true);
 
         $("#idcategoria").val(data.idcategoria);
-        $("#idcategoria").selectpicker('refresh');
+        //$("#idcategoria").selectpicker('refresh');
         $("#codigo").val(data.codigo);
         $("#nombre").val(data.nombre);
         $("#stock").val(data.stock);
