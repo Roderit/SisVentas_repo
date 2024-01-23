@@ -54,7 +54,7 @@ function listar(){
 
             "ajax":
                 {
-                    url: '../ajax/personas.php?op=listar',
+                    url: '../ajax/personas.php?op=listarP',
                     type: "get",
                     datatype: "json",
                     error: function(e){
@@ -107,8 +107,7 @@ function mostrar(idpersona){
 		$("#telefono").val(data.telefono);
 		$("#email").val(data.email);
  		$("#idpersona").val(data.idpersona);
-    }
-    )
+    })
 }
 
 function eliminar(idpersona){
