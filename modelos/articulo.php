@@ -8,8 +8,8 @@
 
         }
 
-        public function insertar($nombre, $descripcion){
-            $sql = "INSERT INTO articulo (idcategoria, codigo, nombre, stock, descripcion, imagen, condicion) VALUES ('$idcategoria', 
+        public function insertar($idcategoria, $codigo, $nombre, $stock, $descripcion, $imagen){
+            $sql = "INSERT INTO articulo(idcategoria, codigo, nombre, stock, descripcion, imagen, condicion) VALUES ('$idcategoria', 
             '$codigo', '$nombre', '$stock', '$descripcion', '$imagen', '1')";
             return ejConsulta($sql);
         }

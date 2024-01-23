@@ -51,12 +51,13 @@
                     <i class="fa fa-times"></i></button>':'<button class="btn btn-warning" onclick="mostrar('.$resp->idarticulo.')">
                     <i class="fa fa-pen"></i></button>'.'<button class="btn btn-primary" onclick="activar('.$resp->idarticulo.')">
                     <i class="fa fa-check"></i></button>',
-                    "1"=>$resp->nombre,
-                    "2"=>$resp->categoria,
-                    "3"=>$resp->codigo,
+                    "1"=>$resp->idcategoria,
+                    "2"=>$resp->codigo,
+                    "3"=>$resp->nombre,
                     "4"=>$resp->stock,
-                    "5"=>"<img src='../files/articulos/".$reg->imagen."' height='50px' width='50px'></img>",
-                    "6"=>$resp->condicion?'<span class="label bg-green">Activado</span>':'<span class="label bg-red">Desctivado</span>',
+                    "5"=>$resp->descripcion,
+                    "6"=>"<img src='../files/articulos/".$resp->imagen."' height='50px' width='50px' >",
+                    "7"=>($resp->condicion)?'<span class="label bg-green">Activado</span>':'<span class="label bg-red">Desctivado</span>',
                 );
             }
 
