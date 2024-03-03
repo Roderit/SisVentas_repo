@@ -217,6 +217,6 @@
 </div>
 <!-- ./wrapper -->
 
-<script type="text/javascript" src="../vistas/codigosjs/articulos.js"></script>
+<script type="text/javascript" src="../vistas/codigosjs/usuario.js"></script>
 </body>
 </html>
