@@ -1,13 +1,13 @@
 <?php
     require "../configuracion/conexion.php";
 
-    class Permiso(){
+    class Permiso{
         public function __construct(){
 
         }
 
         public function listar(){
-            $sql = "SELECT * FROM permiso"
+            $sql = "SELECT * FROM permiso";
             return ejConsulta($sql);
         }
     }
