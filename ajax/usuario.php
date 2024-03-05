@@ -31,13 +31,15 @@
                 }
             }
 
+            $clavehash = hash("SHA256",$clave);
+
             if(empty($idusuario)){
-                $respuesta = $usuario->insertar($nombre,$tipo_documento,$num_documento,$direccion,
-                $telefono,$email,$cargo,$login,$clave,$imagen,$_POST['permiso']);
+                $respuesta = $usuario->insertar($nombre, $tipo_documento, $num_documento, $direccion,
+                $telefono, $email, $cargo, $login, $clavehash, $imagen, $_POST['permiso']);
                 echo $respuesta? "Usuario registrada" : "Usuario no se pudo registrar";
             }else{
                 $respuesta = $usuario->editar($idusuario, $nombre, $tipo_documento, $num_documento, $direccion,
-                $telefono, $email, $cargo, $login, $clave, $imagen, $_POST['permiso']);
+                $telefono, $email, $cargo, $login, $clavehash, $imagen, $_POST['permiso']);
                 echo $respuesta? "Usuario actualizada" : "Usuario no se pudo actualizar";
             }
         break;
@@ -64,18 +66,19 @@
 
             while($resp=$respuesta->fetch_object()){
                 $data[] = array(
-                    "0"=>($reg->condicion)?'<button class="btn btn-warning" onclick="mostrar('.$reg->idusuario.')"><i class="fa fa-pencil"></i></button>'.
- 					' <button class="btn btn-danger" onclick="desactivar('.$reg->idusuario.')"><i class="fa fa-close"></i></button>':
- 					'<button class="btn btn-warning" onclick="mostrar('.$reg->idusuario.')"><i class="fa fa-pencil"></i></button>'.
- 					' <button class="btn btn-primary" onclick="activar('.$reg->idusuario.')"><i class="fa fa-check"></i></button>',
-                    "1"=>$reg->nombre,
-                    "2"=>$reg->tipo_documento,
-                    "3"=>$reg->num_documento,
-                    "4"=>$reg->telefono,
-                    "5"=>$reg->email,
-                    "6"=>$reg->login,
-                    "7"=>"<img src='../files/usuarios/".$reg->imagen."' height='50px' width='50px' >",
-                    "8"=>($reg->condicion)?'<span class="label bg-green">Activado</span>':
+                    "0"=>($resp->condicion)?'<button class="btn btn-warning" onclick="mostrar('.$resp->idusuario.')">
+                    <i class="fa fa-pen"></i></button>'.' <button class="btn btn-danger" onclick="desactivar('.$resp->idusuario.')">
+                    <i class="fa fa-times"></i></button>':'<button class="btn btn-warning" onclick="mostrar('.$resp->idusuario.')">
+                    <i class="fa fa-pen"></i></button>'.' <button class="btn btn-primary" onclick="activar('.$resp->idusuario.')">
+                    <i class="fa fa-check"></i></button>',
+                    "1"=>$resp->nombre,
+                    "2"=>$resp->tipo_documento,
+                    "3"=>$resp->num_documento,
+                    "4"=>$resp->telefono,
+                    "5"=>$resp->email,
+                    "6"=>$resp->login,
+                    "7"=>"<img src='../files/usuarios/".$resp->imagen."' height='50px' width='50px' >",
+                    "8"=>($resp->condicion)?'<span class="label bg-green">Activado</span>':
                     '<span class="label bg-red">Desactivado</span>'
                 );
             }
@@ -106,9 +109,9 @@
             }
     
     
-            while ($reg = $rspta->fetch_object()){
-                $sw=in_array($reg->idpermiso,$valores)?'checked':'';    
-                echo '<li> <input type="checkbox" '.$sw.'  name="permiso[]" value="'.$reg->idpermiso.'">'.$reg->nombre.'</li>';
+            while ($resp = $rspta->fetch_object()){
+                $sw=in_array($resp->idpermiso,$valores)?'checked':'';    
+                echo '<li> <input type="checkbox" '.$sw.'  name="permiso[]" value="'.$resp->idpermiso.'">'.$resp->nombre.'</li>';
             }
     
         break;

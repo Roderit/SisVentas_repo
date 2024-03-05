@@ -156,14 +156,6 @@
 
                                 <div class="col-sm-6">
                                   <div class="form-group">
-                                    <label>Clave</label>
-                                    <input type="password" class="form-control" name="clave" id="clave"
-                                      placeholder="Direccion" required>
-                                  </div>
-                                </div>
-
-                                <div class="col-sm-6">
-                                  <div class="form-group">
                                     <label>Permisos</label>
                                     <ul style="list-style: none;" id="permisos">
 

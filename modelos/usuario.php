@@ -32,6 +32,7 @@
             $login, $clave, $imagen, $permisos){
             $sql = "UPDATE usuario SET nombre='$nombre',tipo_documento='$tipo_documento',num_documento='$num_documento',direccion='$direccion',
             telefono='$telefono',email='$email',cargo='$cargo',login='$login',clave='$clave',imagen='$imagen' WHERE idusuario='$idusuario'";
+            ejConsulta($sql);
             
             $sqldel="DELETE FROM usuario_permiso WHERE idusuario='$idusuario'";
             ejConsulta($sqldel);

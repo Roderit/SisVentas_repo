@@ -109,6 +109,7 @@ function mostrar(idusuario){
         data = JSON.parse(data);
         mostrarFormulario(true);
 
+        $("#nombre").val(data.nombre);
         $("#tipo_documento").val(data.tipo_documento);
         $("#num_documento").val(data.num_documento);
         $("#direccion").val(data.direccion);
