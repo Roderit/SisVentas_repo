@@ -12,14 +12,41 @@
             $login, $clave, $imagen, $permisos){
             $sql = "INSERT INTO usuario(nombre, tipo_documento, num_documento, direccion, telefono, email, cargo, login, clave, imagen, condicion) 
             VALUES('$nombre','$tipo_documento','$num_documento','$direccion','$telefono','$email','$cargo','$login','$clave','$imagen','1')";
-            return ejConsulta($sql);
+            //return ejConsulta($sql);
+            $idusuarionew = ejConsul_retornarID($sql);
+
+            $num_elementos=0;
+            $sw=true;
+
+            while ($num_elementos < count($permisos)){
+
+                $sql_detalle = "INSERT INTO usuario_permiso(idusuario, idpermiso) VALUES('$idusuarionew', '$permisos[$num_elementos]')";
+                ejConsulta($sql_detalle) or $sw = false;
+                $num_elementos=$num_elementos + 1;
+            }
+
+            return $sw;
         }
 
         public function editar($idusuario, $nombre, $tipo_documento, $num_documento, $direccion, $telefono, $email, $cargo,
             $login, $clave, $imagen, $permisos){
             $sql = "UPDATE usuario SET nombre='$nombre',tipo_documento='$tipo_documento',num_documento='$num_documento',direccion='$direccion',
             telefono='$telefono',email='$email',cargo='$cargo',login='$login',clave='$clave',imagen='$imagen' WHERE idusuario='$idusuario'";
-            return ejConsulta($sql);
+            
+            $sqldel="DELETE FROM usuario_permiso WHERE idusuario='$idusuario'";
+            ejConsulta($sqldel);
+
+            $num_elementos=0;
+		    $sw=true;
+            
+            while ($num_elementos < count($permisos))
+            {
+                $sql_detalle = "INSERT INTO usuario_permiso(idusuario, idpermiso) VALUES('$idusuario', '$permisos[$num_elementos]')";
+                ejConsulta($sql_detalle) or $sw = false;
+                $num_elementos=$num_elementos + 1;
+            }
+
+            return $sw;
         }
 
         public function desactivar($idusuario){
